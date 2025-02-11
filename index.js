@@ -2,9 +2,9 @@ const input = document.querySelector("#input");
 const button = document.querySelector("#button");
 const list = document.querySelector(".list");
 
-const inputTodo = () => {
-    return console.log(input.value)
+
+const listText = () => {
+    return list.insertAdjacentHTML("beforeend", `<li>${input.value}</li>` )
 }
 
-button.addEventListener("click", inputTodo)
-
+button.addEventListener("click", listText)
