@@ -1,0 +1,35 @@
+body{
+    background-color: #CAC4CE;
+    color: #2E2848;
+}
+.title{
+    font-family: "Satisfy", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+.container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+   
+}
+.deleteBtn {
+    border: none;
+    text-decoration: none;
+    background-color: #CAC4CE;
+    font-size: large;
+    margin-left: 2rem;
+}
+.list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li{
+    padding: 1rem;
+}
+#input, #button{
+    background-color: #F7ECE1;
+    padding: 0.5rem;
+    border-style: none;
+}

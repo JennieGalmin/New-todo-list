@@ -4,7 +4,7 @@ const list = document.querySelector(".list");
 
 
 const listText = () => {
-    list.insertAdjacentHTML("beforeend", `<li>${input.value}     <button class="deleteBtn">x</button></li>`); 
+    list.insertAdjacentHTML("beforeend", `<li>${input.value}<button class="deleteBtn">x</button></li>`); 
     input.value = "";
 }
 
