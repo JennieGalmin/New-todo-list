@@ -1,10 +1,17 @@
 const input = document.querySelector("#input");
 const button = document.querySelector("#button");
 const list = document.querySelector(".list");
+const listItems = document.querySelectorAll("li")
+
+const saveToLocalStorage = () => {
+    const items = [...listItems].map(item => item.firstChild.textContent);
+    localStorage.setItem("value", items)
+}
 
 
 const listText = () => {
-    list.insertAdjacentHTML("beforeend", `<li>${input.value}<button class="deleteBtn">x</button></li>`); 
+    list.insertAdjacentHTML("beforeend", `<li>${input.value}<button class="deleteBtn">x</button></li>`);
+    saveToLocalStorage();
     input.value = "";
 }
 
@@ -16,3 +23,5 @@ list.addEventListener("click", (event) => {
         event.target.parentElement.remove()
     
 })
+
+saveToLocalStorage()
