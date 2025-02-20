@@ -25,8 +25,9 @@ const listText = () => {
 list.addEventListener("click", (event) => {
     if(event.target.classList.contains("deleteBtn"))
         event.target.parentElement.remove()
-    
+        saveToLocalStorage()
 })
 
 document.addEventListener("DOMContentLoaded", getFromLocalStorage)
+
 button.addEventListener("click", listText)
