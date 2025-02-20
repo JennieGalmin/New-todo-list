@@ -29,7 +29,11 @@ body{
 }
 li{
     padding: 1rem;
-   
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F7ECE1;
 }
 #input, #button{
     background-color: #F7ECE1;

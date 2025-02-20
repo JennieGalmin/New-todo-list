@@ -11,12 +11,12 @@ const saveToLocalStorage = () => {
 const getFromLocalStorage = () => {
     const todos = JSON.parse(localStorage.getItem("items")) || [];
     todos.forEach(todo => {
-        list.insertAdjacentHTML("beforeend", `<li>${todo}<button class="deleteBtn">x</button></li>`)
+    list.insertAdjacentHTML("beforeend", `<li>${todo}<button class="deleteBtn">Delete</button></li>`)
     })
 }
 
 const listText = () => {
-    list.insertAdjacentHTML("beforeend", `<li>${input.value}<button class="deleteBtn">x</button></li>`);
+    list.insertAdjacentHTML("beforeend", `<li>${input.value}<button class="deleteBtn">Delete</button></li>`);
     saveToLocalStorage();
     input.value = "";
 }
