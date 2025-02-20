@@ -1,13 +1,19 @@
 const input = document.querySelector("#input");
 const button = document.querySelector("#button");
-const list = document.querySelector(".list");
-const listItems = document.querySelectorAll("li")
+const list = document.querySelector(".list"); 
 
 const saveToLocalStorage = () => {
-    const items = [...listItems].map(item => item.firstChild.textContent);
-    localStorage.setItem("value", items)
+    let items = [...list.querySelectorAll("li")].map(item => item.firstChild.textContent);
+
+    localStorage.setItem("items", JSON.stringify(items));
 }
 
+const getFromLocalStorage = () => {
+    const todos = JSON.parse(localStorage.getItem("items")) || [];
+    todos.forEach(todo => {
+        list.insertAdjacentHTML("beforeend", `<li>${todo}<button class="deleteBtn">x</button></li>`)
+    })
+}
 
 const listText = () => {
     list.insertAdjacentHTML("beforeend", `<li>${input.value}<button class="deleteBtn">x</button></li>`);
@@ -16,12 +22,11 @@ const listText = () => {
 }
 
 
-button.addEventListener("click", listText)
-
 list.addEventListener("click", (event) => {
     if(event.target.classList.contains("deleteBtn"))
         event.target.parentElement.remove()
     
 })
 
-saveToLocalStorage()
+document.addEventListener("DOMContentLoaded", getFromLocalStorage)
+button.addEventListener("click", listText)
